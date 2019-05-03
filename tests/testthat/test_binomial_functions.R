@@ -31,6 +31,7 @@ test_that("checks bin_probability returns an object of length(success) for valid
 test_that("checks bin_distribution returns an object of class c('bindis', 'data.frame')", {
   expect_equal(class(bin_distribution(10, 0.5)), c("bindis", "data.frame"))
   expect_equal(class(bin_distribution(27, 0.1)), c("bindis", "data.frame"))
+  expect_equal(class(bin_distribution(100, 0.001)), c("bindis", "data.frame"))
 })
 
 

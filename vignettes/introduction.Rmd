@@ -27,5 +27,71 @@ library(binomial)
 
 ```
 
+## Binomial
 
 
+
+The package `"binomial"` is a minimal implementation for calculating and visualizing the probability for  binomial distributions with given inputs trials, prob and success
+
+
+
+
+
+## Creating a numeric object for permutations with `bin_choose()` 
+
+
+
+The first step is to create a numeric object with given arguments trials and probability using bin_choose(). By default, `bin_choose()` automatically check that our inputs for trials and successes are valid. The returned value will be the number of permutations to achieve the specified number of successes in given amount of trials. Successes may be a vector of more than one element.
+
+
+
+```{r}
+variable <- bin_choose(trials = 10, prob = 3)
+
+variable
+
+```
+
+
+## Calculating binomial probability using `bin_probability()`
+
+We can calculate the binomial probability for given arguments trials, successes and prob with the function `bin_probability()`. Successes may be a vector of more than one element.
+
+```{r}
+p <- bin_probability(10, 2:4, 0.8)
+p
+
+```
+
+## Getting distribution of binomial probabilites using `bin_distribution()`
+
+We can calculate the entire distribution of binomial probabilities for successes = 0 to successes = length(trials) using `bin_distribution()` for given arguments trials and prob. Our function will return an object of class c("bindis", "data.frame").
+
+```{r}
+dis <-bin_distribution(trials = 5, prob = 0.3)
+dis
+class(dis)
+```
+
+## Plot of bin_distribution using `plot.bindis()`
+
+We can plot our binomial distribution with given input arguments trials and prob using the function `plot.bindis()`. 
+```{r}
+graph <- plot.bindis(trials = 15, prob = 0.2)
+graph
+```
+## Getting culmulative binomial probabilites using `bin_cumulative()` 
+
+In order to calculate the cumulative probablities of our binomial distribution, we must use the function `bin_cumulative()` which has given input arguments trials and prob. Our function will return an object of class c("bincum", "data.frame").
+```{r}
+binc <- bin_cumulative(10, 0.5)
+binc
+class(binc)
+```
+## Plotting our cumulative binomial distribution using `plot.bincum()`
+
+We can plot our cumulative binomial distribution using the function `plot.bincum()` with given input arguments trials and prob.
+```{r}
+cumulative_plot <- plot.bincum(10, 0.1)
+cumulative_plot
+```

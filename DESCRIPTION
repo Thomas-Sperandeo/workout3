@@ -2,7 +2,7 @@ Package: binomial
 Title: Binomial 
 Version: 0.0.0.9000
 Authors@R: person("Thomas", "Sperandeo", email = "tsperandeo@berkeley.edu", role = c("aut", "cre"))
-Description: Binomial 
+Description: Package of functions to calculate various aspects regarding binomial distributions
 Depends: R (>= 3.5.2)
 License: GPL-3
 Encoding: UTF-8

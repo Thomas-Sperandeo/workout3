@@ -225,10 +225,32 @@ print.binvar <- function(list = "binvar"){
 
 #' @export
 x <- list()
-summary.binvar <- function(x = "binvar"){
-  x <- list(trials = trials, prob = prob, mean = aux_mean, kurtosis = aux_kurtosis, skewness = aux_skewness)
-  class(x) <- "binvar"
+summary.binvar <- function(list1 = "binvar") {
+  x <-
+    list(
+      trials = list1$trials,
+      prob = list1$prob,
+      mean = aux_mean(list1$trials, list1$prob),
+      mode = aux_mode(list1$trials, list1$prob),
+      kurtosis = aux_kurtosis(list1$trials, list1$prob),
+      skewness = aux_skewness(list1$trials, list1$prob)
+    )
+  class(x) <- "summary.binvar"
   return(x)
+}
+
+#' @export
+print.summary.binvar <- function(list1 = "summary.binvar"){
+  cat('"Summary Binomial"', "\n\n")
+  cat("Parameters", "\n")
+  cat("- number of trials:", list1$trials, "\n")
+  cat("- probability of success:", list1$prob, "\n\n")
+  cat("Measures", "\n")
+  cat("- mean:", aux_mean(list1$trials, list1$prob), "\n")
+  cat("- variance:", aux_variance(list1$trials, list1$prob), "\n")
+  cat("- mode:", aux_mode(list1$trials, list1$prob), "\n")
+  cat("- skewness:", aux_skewness(list1$trials, list1$prob), "\n")
+  cat("- kurtosis:", aux_kurtosis(list1$trials, list1$prob), "\n")
 }
 
 #' @title bin_mean
