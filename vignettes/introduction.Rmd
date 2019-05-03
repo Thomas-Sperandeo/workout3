@@ -1,0 +1,31 @@
+---
+##title: "Getting Started with cointoss"
+
+author: "Thomas Sperandeo"
+
+date: "May 3rd 2019"
+
+output: rmarkdown::html_vignette
+
+vignette: >
+
+  %\VignetteIndexEntry{Introduction to binomial}
+
+  %\VignetteEngine{knitr::rmarkdown}
+
+  %\VignetteEncoding{UTF-8}
+
+---
+
+
+
+```{r, echo = FALSE, message = FALSE}
+
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+
+library(binomial)
+
+```
+
+
+
