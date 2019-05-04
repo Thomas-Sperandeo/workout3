@@ -89,7 +89,6 @@ aux_kurtosis <- function(trials, prob){
 #'
 #' #0 successes
 #' 5_choose_0 <- bin_choose(5, 0)
-choose <- 0
 bin_choose <- function(trials = 1 , success = 1){
   if(max(success) > trials){
     stop("number of successes cannot exceed number of trials")
@@ -133,7 +132,6 @@ bin_probability(1, 0, 0.5)
 #'
 #' #example 2
 #' dis2 <- bin_distribution(10, 0.2)
-#'
 #'
 probability <- 0
 bin_distribution <- function(trials, prob){
@@ -205,8 +203,6 @@ plot.bincum(5, 0.5)
 #' #example 2
 #' prob2 <- bin_variable(10, 0.3)
 #'
-list <- list()
-prob <- 0
 bin_variable <- function(trials, prob){
   check_trials(trials)
   check_prob(prob)

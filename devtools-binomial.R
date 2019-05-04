@@ -6,7 +6,7 @@
 
 # =====================================================
 
-devtools::document()
+devtools:document()
 
 devtools::check_man()
 

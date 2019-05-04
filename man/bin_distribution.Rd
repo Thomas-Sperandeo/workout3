@@ -27,6 +27,5 @@ dis1 <- bin_distribution(1, 0.5)
 #example 2
 dis2 <- bin_distribution(10, 0.2)
 
-
 }
 \keyword{datasets}
